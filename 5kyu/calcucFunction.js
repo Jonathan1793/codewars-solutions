@@ -13,34 +13,54 @@ The most outer function represents the left operand, the most inner function rep
 Division should be integer division. For example, this should return 2, not 2.666666...:
 eight(dividedBy(three()));*/
 
-function zero(op) {}
-function one(op) {}
-function two(op) {}
-function three(op) {}
-function four(op) {}
-function five(op) {}
-function six(op) {}
-function seven(op) {}
-function eight(op) {}
-function nine(op) {}
+function zero(cb) {
+  return cb ? cb(0) : 0;
+}
+function one(cb) {
+  return cb ? cb(1) : 1;
+}
+function two(cb) {
+  return cb ? cb(2) : 2;
+}
+function three(cb) {
+  return cb ? cb(3) : 3;
+}
+function four(cb) {
+  return cb ? cb(4) : 4;
+}
+function five(cb) {
+  return cb ? cb(5) : 5;
+}
+function six(cb) {
+  return cb ? cb(6) : 6;
+}
+function seven(cb) {
+  return cb ? cb(7) : 7;
+}
+function eight(cb) {
+  return cb ? cb(8) : 8;
+}
+function nine(cb) {
+  return cb ? cb(9) : 9;
+}
 
-function plus(a) {
-  return function (b) {
-    return b + a;
+function plus(numberRight) {
+  return function (numberLeft) {
+    return numberLeft + numberRight;
   };
 }
-function minus(a) {
-  return function (b) {
-    return b - a;
+function minus(numberRight) {
+  return function (numberLeft) {
+    return numberLeft - numberRight;
   };
 }
-function times(a) {
-  return function (b) {
-    return b * a;
+function times(numberRight) {
+  return function (numberLeft) {
+    return numberLeft * numberRight;
   };
 }
-function dividedBy(a) {
-  return function (b) {
-    return Math.floor(b / a);
+function dividedBy(numberRight) {
+  return function (numberLeft) {
+    return Math.floor(numberLeft / numberRight);
   };
 }
