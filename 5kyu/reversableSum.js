@@ -61,5 +61,8 @@ function sumDifRev(n) {
   Object.keys(sequence).forEach((key, index) => {
     sequence[key] = result[index];
   });
+  console.log(sequence);
   return sequence[n];
 }
+
+sumDifRev(2);
